@@ -557,6 +557,7 @@ GiftedChat.defaultProps = {
   onInputTextChanged: null,
   maxInputLength: null,
   forceGetKeyboardHeight: false,
+  systemMessageParsePatterns: () => []
 };
 
 GiftedChat.propTypes = {
@@ -581,6 +582,7 @@ GiftedChat.propTypes = {
   renderAvatarOnTop: PropTypes.bool,
   renderBubble: PropTypes.func,
   renderSystemMessage: PropTypes.func,
+  systemMessageParsePatterns: PropTypes.func,
   onLongPress: PropTypes.func,
   renderMessage: PropTypes.func,
   renderMessageText: PropTypes.func,
