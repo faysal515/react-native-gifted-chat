@@ -1,7 +1,7 @@
 # Extra feature on top of Gifted Chat
 - You have now an extra prop`systemMessageParsePatterns` which enables you to make system message clickable 
 
-```
+```jsx
 <GiftedChat
         messages={this.props.chat.messages}
         onSend={(messages) => this.onSend(messages)}
