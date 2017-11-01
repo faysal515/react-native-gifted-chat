@@ -1,3 +1,30 @@
+# Extra feature on top of Gifted Chat
+- You have now an extra prop`systemMessageParsePatterns` which enables you to make system message clickable 
+
+```
+<GiftedChat
+        messages={this.props.chat.messages}
+        onSend={(messages) => this.onSend(messages)}
+        user={{
+          _id: 1,
+        }}
+        renderSystemMessage={this.renderSystemMessage}
+        parsePatterns={(linkStyle) => [
+          {type: 'url', style: {...linkStyle}, onPress: this.onPressPhoneNumber},
+        ]}
+        systemMessageParsePatterns={
+          (currentMessage) => [
+            {
+              pattern: /[a-zA-Z0-9]+ applied for the job/,
+              style: {backgroundColor: 'black', color: 'yellow'},
+              onPress: (x) => console.log('QQQ ', x, this.props,currentMessage) // url or app opener function here
+            },
+          ]
+        }
+      />
+```
+
+
 # Gifted Chat
 
 [![npm downloads](https://img.shields.io/npm/dm/react-native-gifted-chat.svg)](https://www.npmjs.com/package/react-native-gifted-chat)
